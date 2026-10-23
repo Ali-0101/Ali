@@ -36,8 +36,10 @@ document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false)
 const header = document.querySelector(".site-header");
 const progressBar = document.querySelector(".progress-bar");
 const toTop = document.querySelector(".to-top");
+const heroTitle = document.querySelector(".hero h1");
 const onScroll = () => {
   header.classList.toggle("scrolled", scrollY > 8);
+  header.classList.toggle("at-top", heroTitle.getBoundingClientRect().bottom > header.offsetHeight);
   const max = document.documentElement.scrollHeight - innerHeight;
   progressBar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
   toTop.classList.toggle("show", scrollY > innerHeight * 0.8);

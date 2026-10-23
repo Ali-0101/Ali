@@ -78,10 +78,14 @@ p { margin: 0 0 1em; }
 }
 .site-header.scrolled { border-bottom-color: var(--border); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; white-space: nowrap; }
-.logo-mark { width: 26px; height: 26px; flex: none; fill: var(--accent); stroke: none; transition: transform 0.3s; }
-.logo-mark path:last-child { fill: none; stroke: var(--bg); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.logo:hover .logo-mark { transform: scale(1.12) rotate(-6deg); }
+.logo { display: inline-flex; align-items: center; }
+.logo-mark { width: 36px; height: 36px; flex: none; fill: var(--accent); transition: transform 0.3s; }
+.logo-mark text { fill: var(--bg); letter-spacing: -0.02em; }
+.logo:hover .logo-mark { transform: scale(1.08) rotate(-4deg); }
+.logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; white-space: nowrap; }
+/* Name fades in once the large intro title has scrolled out of view */
+.logo-name { display: inline-block; margin-left: 10px; max-width: 14em; overflow: hidden; transition: opacity 0.35s ease, max-width 0.45s ease, margin-left 0.45s ease, transform 0.35s ease; }
+.site-header.at-top .logo-name { opacity: 0; max-width: 0; margin-left: 0; transform: translateX(-6px); }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { font-size: 0.95rem; color: var(--muted); font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
